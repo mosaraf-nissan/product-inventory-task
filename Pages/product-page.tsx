@@ -9,10 +9,7 @@ import { ProductHeader } from "../components/product-header";
 import ProductGrid from "../components/product-grid";
 
 export function ProductsPage() {
-  const storedProducts = localStorage.getItem("products");
-  const [products, setProducts] = useState<Product[]>(
-    storedProducts ? JSON.parse(storedProducts) : []
-  );
+  const [products, setProducts] = useState<Product[]>([]);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -24,6 +21,7 @@ export function ProductsPage() {
     if (storedProducts) {
       setProducts(JSON.parse(storedProducts));
     }
+    setProducts(storedProducts ? JSON.parse(storedProducts) : []);
   }, []);
 
   useEffect(() => {
