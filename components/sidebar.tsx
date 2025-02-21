@@ -23,7 +23,7 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
 
       <div
         className={`fixed  inset-y-0 left-0 z-10 w-64 bg-purple-800/10 dark:bg-gray-800 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 ${
-          open ? "translate-x-0" : "-translate-x-full"
+          open ? "translate-x-0 bg-white" : "-translate-x-full"
         }`}
       >
         <div className="h-16 flex items-center justify-between px-6 bg-gray-50 dark:bg-gray-900 lg:hidden">

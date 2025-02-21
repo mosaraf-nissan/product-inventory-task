@@ -24,14 +24,16 @@ export function Layout({ children }: LayoutProps) {
     <div className="flex min-h-screen bg-gray-50 dark:bg-gray-900">
       <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
       <div className="flex-1">
-        <header className="bg-purple-900/10 flex justify-end  dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-          <div className="flex h-16 items-center justify-between px-4">
+        <header className="bg-purple-900/10 flex items-center justify-between px-4  dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+          <div>
             <button
               className="lg:hidden text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
               onClick={() => setSidebarOpen(true)}
             >
               <FiMenu className="h-6 w-6" />
             </button>
+          </div>
+          <div className="flex h-16 items-center justify-between ">
             <div className="flex items-center  gap-4">
               <ThemeToggle />
               <UserNav />

@@ -62,7 +62,7 @@ export default function AddEditProductModal({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 w-full h-full min-h-screen">
-      <div className="bg-white rounded-lg p-8 w-full max-w-md shadow-lg dark:bg-gray-900/90">
+      <div className="bg-white mx-4 md:mx-0 rounded-xl p-8 w-full max-w-md shadow-lg dark:bg-gray-900/90">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
             {product ? "Edit Product" : "Add New Product"}

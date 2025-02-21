@@ -72,15 +72,17 @@ export function ProductsPage() {
           onDelete={deleteProduct}
         />
       </div>
-      <AddEditProductModal
-        isOpen={isAddModalOpen || !!editingProduct}
-        onClose={() => {
-          setIsAddModalOpen(false);
-          setEditingProduct(null);
-        }}
-        onSave={editingProduct ? updateProduct : addProduct}
-        product={editingProduct}
-      />
+      <div>
+        <AddEditProductModal
+          isOpen={isAddModalOpen || !!editingProduct}
+          onClose={() => {
+            setIsAddModalOpen(false);
+            setEditingProduct(null);
+          }}
+          onSave={editingProduct ? updateProduct : addProduct}
+          product={editingProduct}
+        />
+      </div>
     </Layout>
   );
 }
