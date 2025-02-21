@@ -1,15 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Layout } from "./layout";
-import AddEditProductModal from "./add-edit-product-modal";
+import { Layout } from "../components/layout";
+import AddEditProductModal from "../components/add-edit-product-modal";
 
 import type { Product } from "@/types/product";
-import { ProductHeader } from "./product-header";
-import ProductGrid from "./product-grid";
+import { ProductHeader } from "../components/product-header";
+import ProductGrid from "../components/product-grid";
 
 export function ProductsPage() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const storedProducts = localStorage.getItem("products");
+  const [products, setProducts] = useState<Product[]>(
+    storedProducts ? JSON.parse(storedProducts) : []
+  );
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [searchTerm, setSearchTerm] = useState("");

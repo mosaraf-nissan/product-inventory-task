@@ -18,15 +18,15 @@ export default function ProductGrid({
       {products.map((product) => (
         <div
           key={product.id}
-          className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4"
+          className="bg-purple-100 dark:bg-gray-800 rounded-xl shadow-sm p-4"
         >
-          <div className="relative aspect-square w-full mb-4 bg-gray-100 dark:bg-gray-700 rounded-md overflow-hidden">
+          <div className="relative aspect-square w-full mb-4 bg-gray-100 shadow-md dark:bg-gray-700 rounded-xl overflow-hidden">
             <Image
               src={product.image || "/placeholder.svg"}
               alt={product.name}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-              className="object-cover"
+              className="object-cover "
               priority={false}
             />
           </div>

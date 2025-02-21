@@ -24,7 +24,7 @@ export function Layout({ children }: LayoutProps) {
     <div className="flex min-h-screen bg-gray-50 dark:bg-gray-900">
       <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
       <div className="flex-1">
-        <header className="bg-white flex justify-end  dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <header className="bg-purple-900/10 flex justify-end  dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
           <div className="flex h-16 items-center justify-between px-4">
             <button
               className="lg:hidden text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"

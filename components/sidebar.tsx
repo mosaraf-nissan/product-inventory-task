@@ -22,7 +22,7 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
       ></div>
 
       <div
-        className={`fixed border-r inset-y-0 left-0 z-10 w-64 bg-white dark:bg-gray-800 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 ${
+        className={`fixed  inset-y-0 left-0 z-10 w-64 bg-purple-800/10 dark:bg-gray-800 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -38,7 +38,7 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
           </button>
         </div>
 
-        <div className="p-6">
+        <div className="p-6 pr-0">
           <div className="flex items-center gap-2 mb-8">
             <FiPackage className="h-6 w-6 text-gray-700 dark:text-gray-200" />
             <span className="text-xl font-bold text-gray-700 dark:text-gray-200">
@@ -48,8 +48,8 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
           <nav className="space-y-2">
             <Link
               href="/"
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                pathname === "/" ? "bg-gray-100 dark:bg-gray-700" : ""
+              className={`flex items-center gap-2 px-3 py-2  text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl rounded-r-none ${
+                pathname === "/" ? "bg-white  dark:bg-[#111827]" : ""
               }`}
             >
               <FiLayout className="h-5 w-5" />
@@ -57,8 +57,8 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
             </Link>
             <Link
               href="/products"
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                pathname === "/products" ? "bg-gray-100 dark:bg-gray-700" : ""
+              className={`flex items-center gap-2 px-3 py-2  text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl rounded-r-none ${
+                pathname === "/products" ? "bg-white  dark:bg-[#111827]" : ""
               }`}
             >
               <FiPackage className="h-5 w-5" />

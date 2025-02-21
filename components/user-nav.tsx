@@ -27,7 +27,7 @@ export function UserNav() {
     <div className="relative z-10" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100  dark:hover:bg-gray-700"
+        className="flex items-center gap-2 p-2 rounded-full duration-200 hover:bg-gray-100   dark:hover:bg-gray-700"
       >
         <div className="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
           <FiUser className="h-5 w-5 text-gray-600 dark:text-gray-400" />

@@ -1,4 +1,6 @@
+"use client";
 import type React from "react";
+import dynamic from "next/dynamic";
 import {
   FiPackage,
   FiCheckCircle,
@@ -14,30 +16,70 @@ interface DashboardStatsProps {
     outOfStock: number;
   };
 }
+const Chart = dynamic(
+  () => import("react-apexcharts").then((mod) => mod.default),
+  { ssr: false }
+);
 
 export function DashboardStats({ stats }: DashboardStatsProps) {
+  const chartOptions = {
+    chart: {
+      type: "bar" as const,
+      height: 350,
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "55%",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    xaxis: {
+      categories: ["Total", "In Stock", "Low Stock", "Out of Stock"],
+    },
+  };
+
+  const chartSeries = [
+    {
+      name: "Products",
+      data: [stats.total, stats.inStock, stats.lowStock, stats.outOfStock],
+    },
+  ];
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <StatCard
-        title="Total Products"
-        value={stats.total}
-        icon={<FiPackage className="h-5 w-5" />}
-      />
-      <StatCard
-        title="In Stock"
-        value={stats.inStock}
-        icon={<FiCheckCircle className="h-5 w-5" />}
-      />
-      <StatCard
-        title="Low Stock"
-        value={stats.lowStock}
-        icon={<FiAlertCircle className="h-5 w-5" />}
-      />
-      <StatCard
-        title="Out of Stock"
-        value={stats.outOfStock}
-        icon={<FiXCircle className="h-5 w-5" />}
-      />
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <div>
+        <Chart
+          options={chartOptions}
+          series={chartSeries}
+          type="bar"
+          height={350}
+        />
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+        <StatCard
+          title="Total Products"
+          value={stats.total}
+          icon={<FiPackage className="h-5 w-5" />}
+        />
+        <StatCard
+          title="In Stock"
+          value={stats.inStock}
+          icon={<FiCheckCircle className="h-5 w-5" />}
+        />
+        <StatCard
+          title="Low Stock"
+          value={stats.lowStock}
+          icon={<FiAlertCircle className="h-5 w-5" />}
+        />
+        <StatCard
+          title="Out of Stock"
+          value={stats.outOfStock}
+          icon={<FiXCircle className="h-5 w-5" />}
+        />
+      </div>
     </div>
   );
 }
