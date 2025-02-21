@@ -62,7 +62,7 @@ export default function AddEditProductModal({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 w-full h-full min-h-screen">
-      <div className="bg-white rounded-lg p-8 w-full max-w-md shadow-lg">
+      <div className="bg-white rounded-lg p-8 w-full max-w-md shadow-lg dark:bg-gray-900/90">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">
             {product ? "Edit Product" : "Add New Product"}
@@ -82,7 +82,7 @@ export default function AddEditProductModal({
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full border rounded-md px-3 py-2"
+              className="w-full border rounded-xl px-3 py-2 dark:bg-gray-700"
             />
             <input
               name="price"
@@ -91,7 +91,7 @@ export default function AddEditProductModal({
               value={formData.price}
               onChange={handleChange}
               required
-              className="w-full border rounded-md px-3 py-2"
+              className="w-full border rounded-xl  px-3 py-2 dark:bg-gray-700"
             />
             <input
               name="image"
@@ -99,14 +99,14 @@ export default function AddEditProductModal({
               value={formData.image}
               onChange={handleChange}
               required
-              className="w-full border rounded-md px-3 py-2"
+              className="w-full border rounded-xl px-3 py-2 dark:bg-gray-700"
             />
             <select
               name="category"
               value={formData.category}
               onChange={handleChange}
               required
-              className="w-full border rounded-md px-3 py-2"
+              className="w-full border rounded-xl px-3 py-2 dark:bg-gray-700"
             >
               <option value="">Select Category</option>
               <option value="Electronics">Electronics</option>
@@ -119,7 +119,7 @@ export default function AddEditProductModal({
               value={formData.status}
               onChange={handleChange}
               required
-              className="w-full border rounded-md px-3 py-2"
+              className="w-full border rounded-xl px-3 py-2 dark:bg-gray-700"
             >
               <option value="In Stock">In Stock</option>
               <option value="Out of Stock">Out of Stock</option>
@@ -129,7 +129,7 @@ export default function AddEditProductModal({
           <div className="mt-6">
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+              className="w-full bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600"
             >
               {product ? "Update" : "Add"} Product
             </button>

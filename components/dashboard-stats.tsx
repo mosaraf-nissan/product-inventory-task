@@ -48,8 +48,8 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
     },
   ];
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
-      <div>
+    <div className=" bg-purple-100 rounded-xl p-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="bg-white rounded-xl">
         <Chart
           options={chartOptions}
           series={chartSeries}

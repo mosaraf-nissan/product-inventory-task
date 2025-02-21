@@ -34,24 +34,35 @@ export default function ProductGrid({
             {product.name}
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-2">
-            ${product.price.toFixed(2)}
+            <span className="font-bold">Price:</span> $
+            {product.price.toFixed(2)}
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-            {product.category}
+            <span className="font-bold">Category:</span> {product.category}
           </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            Status: {product.status}
+          <p className="text-sm font-bold text-gray-500 dark:text-gray-400 mb-4">
+            <span
+              className={
+                product.status === "In Stock"
+                  ? "text-green-500"
+                  : product.status === "Out of Stock"
+                  ? "text-red-500"
+                  : "text-yellow-700"
+              }
+            >
+              {product.status}
+            </span>
           </p>
           <div className="flex justify-between">
             <button
               onClick={() => onEdit(product)}
-              className="bg-blue-500 text-white px-3 py-1 rounded-md flex items-center hover:bg-blue-600 transition-colors"
+              className="bg-purple-200 text-purple-600 px-3 py-1 rounded-xl flex items-center transition-colors"
             >
               <FiEdit className="mr-1" /> Edit
             </button>
             <button
               onClick={() => onDelete(product.id)}
-              className="bg-red-500 text-white px-3 py-1 rounded-md flex items-center hover:bg-red-600 transition-colors"
+              className="bg-red-500 text-white px-3 py-1 rounded-xl flex items-center hover:bg-red-600 transition-colors"
             >
               <FiTrash2 className="mr-1" /> Delete
             </button>
