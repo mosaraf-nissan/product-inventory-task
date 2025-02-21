@@ -13,6 +13,7 @@ This is a simple CRUD-based product management dashboard built with Next.js, Typ
 
 ## Prerequisites
 
+- Next.Js(15.1.7)
 - Node.js (v14 or later)
 - npm or yarn
 
@@ -21,6 +22,6 @@ This is a simple CRUD-based product management dashboard built with Next.js, Typ
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/product-management-dashboard.git
+git clone https://github.com/mosaraf-nissan/product-inventory-task.git
 cd product-management-dashboard
 ```

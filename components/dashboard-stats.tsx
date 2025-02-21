@@ -26,6 +26,7 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
     chart: {
       type: "bar" as const,
       height: 350,
+      // gray-200
     },
     plotOptions: {
       bar: {
@@ -48,14 +49,16 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
     },
   ];
   return (
-    <div className=" bg-purple-100 rounded-xl p-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
-      <div className="bg-white rounded-xl">
-        <Chart
-          options={chartOptions}
-          series={chartSeries}
-          type="bar"
-          height={350}
-        />
+    <div className=" bg-purple-100 rounded-xl p-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-2 dark:bg-gray-700">
+      <div className="bg-white dark:bg-gray-800">
+        <div className="text-black">
+          <Chart
+            options={chartOptions}
+            series={chartSeries}
+            type="bar"
+            height={350}
+          />
+        </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
